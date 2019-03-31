@@ -4,3 +4,14 @@ server:
 spring:
   application:
     name: display-service
+
+hystrix:
+  command:
+    default:    # command key. use 'default' for global setting.
+      execution:
+        isolation:
+          thread:
+            timeoutInMilliseconds: 3000
+      circuitBreaker:
+        requestVolumeThreshold: 1   # Minimum number of request to calculate circuit breaker's health. default 20
+        errorThresholdPercentage: 50 # Error percentage to open circuit. default 50

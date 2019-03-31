@@ -13,8 +13,13 @@ public class ProductRemoteService {
         this.restTemplate = restTemplate;
     }
 
-    @HystrixCommand
+    @HystrixCommand(fallbackMethod = "getProductInfoFallback")
     public String getProductInfo(String productId) {
         return this.restTemplate.getForObject(url + productId, String.class);
+    }
+
+    public String getProductInfoFallback(String ProductId, Throwable throwable){
+        System.out.println("throwable=" + throwable);
+        return "[This Product is sold out]";
     }
 }
