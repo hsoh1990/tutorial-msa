@@ -9,10 +9,10 @@
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
     <groupId>me.wellstone.msa</groupId>
-    <artifactId>registry-service</artifactId>
+    <artifactId>registry-server</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>registry-service</name>
-    <description>registry service (eureka)</description>
+    <name>registry-server</name>
+    <description>registry server (eureka)</description>
 
     <properties>
         <java.version>1.8</java.version>
